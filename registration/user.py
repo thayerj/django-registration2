@@ -5,6 +5,6 @@ try:
     # For Django >= 1.5, use get_user_model() and store result User
     from django.contrib.auth import get_user_model
     User = get_user_model()
-except ImportError:
+except:
     # Django < 1.5, load User from registration.models
     from django.contrib.auth.models import User
