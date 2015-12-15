@@ -59,7 +59,7 @@ class RegistrationProfile(models.Model):
             self.moderation_time = datetime.now()
         super(RegistrationProfile, self).save(*args, **kwargs)
 
-    @transaction.commit_on_success
+    @transaction.atomic
     def activate(self):
         user = self.user
         user.is_active = True
